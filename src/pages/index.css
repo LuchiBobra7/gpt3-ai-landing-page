@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+.parallax-effect-img {
+  transform-style: preserve-3d;
+  width: 669px;
+  height: 702px;
+}
+
+.nav-link-active {
+  color: white !important;
+}

@@ -1,16 +1,12 @@
-import { Heading, Text, useColorModeValue } from '@chakra-ui/react'
+import { Icon } from '@chakra-ui/react'
 import Link from 'components/link'
-import { SITE_NAME } from 'constants/main'
+import LogoIcon from 'components/icons/logo'
 
 const Logo = () => {
   return (
-    <Heading fontSize="2xl">
-      <Link
-        href="/"
-      >
-        {SITE_NAME}
-      </Link>
-    </Heading>
+    <Link href="/">
+      <Icon as={LogoIcon} width="64px" height="17px" />
+    </Link>
   )
 }
 
