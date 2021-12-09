@@ -1,23 +1,28 @@
-import { useRouter } from 'next/router'
 import { HStack } from '@chakra-ui/react'
-import Link from 'components/link'
+import ScrollLink from './nav-link'
 import navItems from './nav-data'
 
 const NavMenu = () => {
-  const { pathname } = useRouter()
-
   return (
     <HStack alignItems="center" spacing={{ base: 7, md: 12 }} as="nav">
       {navItems.map(({ title, href }) => {
         return (
-          <Link
+          <ScrollLink
             key={href}
-            href={href}
-            color={pathname == href ? 'white' : 'inherit'}
+            to={href}
+            fontSize="lg"
+            fontWeight={500}
+            color="whiteAlpha.800"
+            activeClass="nav-link-active"
             whiteSpace="nowrap"
+            spy
+            smooth
+            offset={-64}
+            cursor="pointer"
+            _hover={{ color: 'white' }}
           >
             {title}
-          </Link>
+          </ScrollLink>
         )
       })}
     </HStack>

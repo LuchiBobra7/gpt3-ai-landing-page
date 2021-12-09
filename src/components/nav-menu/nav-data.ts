@@ -1,16 +1,24 @@
 const navItems = [
   {
-    href: '/',
+    href: 'brand',
     title: 'Home',
   },
 
   {
-    href: '/about',
-    title: 'About me',
+    href: 'about',
+    title: 'What is GPT?',
   },
   {
-    href: '/portfolio',
-    title: 'My Portfolio',
+    href: 'features',
+    title: 'Open AI',
+  },
+  {
+    href: 'possibilities',
+    title: 'Case Studies',
+  },
+  {
+    href: 'blog',
+    title: 'Library',
   },
 ]
 
