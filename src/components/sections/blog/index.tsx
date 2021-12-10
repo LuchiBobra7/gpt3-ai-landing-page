@@ -42,7 +42,7 @@ const BlogsSection = () => {
                   gridRow: { lg: 'span 2/span 2' },
                   gridColumn: { lg: 'span 4/span 4' },
                 },
-                '&:first-child .card-title': { fontSize: { lg: '4xl' } },
+                '&:first-of-type .card-title': { fontSize: { md: '4xl' } },
               }}
             >
               <AspectRatio ratio={16 / 9} position="relative" w="full">
@@ -63,7 +63,7 @@ const BlogsSection = () => {
                 >
                   Sep 26, 2021
                 </Text>
-                <Heading fontSize={{ lg: 'xl' }} as="h3">
+                <Heading fontSize={{ lg: 'xl' }} as="h3" className="card-title">
                   {item.title}
                 </Heading>
 
