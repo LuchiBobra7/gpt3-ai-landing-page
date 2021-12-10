@@ -3,17 +3,18 @@ import SectionWrapper from '../section-wrapper'
 import Image from 'components/image'
 import CustomHeading from 'components/heading'
 import CTA from './cta'
+import CTALink from 'components/cta-link'
 
 const PossibilitiesSection = () => {
   return (
-    <SectionWrapper py={0} id="possibilities">
+    <SectionWrapper py={{ base: 0 }} id="possibilities">
       <Container
         w="full"
         as={HStack}
         flexWrap="wrap"
         justifyContent="space-between"
         alignItems="flex-end"
-        spacing={24}
+        spacing={{ lg: 24 }}
       >
         <Box flex={{ lg: 1 }} position="relative">
           <Image
@@ -23,7 +24,13 @@ const PossibilitiesSection = () => {
             height={607}
           />{' '}
         </Box>
-        <VStack w="full" flex={1} spacing={7} alignItems="flex-start" py={20}>
+        <VStack
+          w="full"
+          flex={1}
+          spacing={7}
+          alignItems="flex-start"
+          py={{ lg: 20 }}
+        >
           <Text color="skyBlue.500">Request Early Access to Get Started</Text>
           <CustomHeading fontSize="4xl">
             The possibilities are beyond your imagination
@@ -34,9 +41,7 @@ const PossibilitiesSection = () => {
             alteration boisterous the attachment. Party we years to order allow
             asked of.
           </Text>
-          <Text color="pomegranate.400">
-            Request Early Access to Get Started
-          </Text>
+          <CTALink title="Request Early Access to Get Started" href="/" />
         </VStack>
       </Container>
       <CTA />

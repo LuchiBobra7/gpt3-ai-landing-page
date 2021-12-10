@@ -18,11 +18,14 @@ const BlogsSection = () => {
   return (
     <SectionWrapper id="blog">
       <Container>
-        <CustomHeading pb={4} mb={12} maxW="60%">
+        <CustomHeading pb={4} mb={12} maxW={{ base: '80%', xl: '60%' }}>
           A lot is happening, We are blogging about it.
         </CustomHeading>
         <SimpleGrid
-          templateColumns={{ lg: 'repeat(10,minmax(0,1fr))' }}
+          templateColumns={{
+            md: 'repeat(2,minmax(0,1fr))',
+            lg: 'repeat(10,minmax(0,1fr))',
+          }}
           templateRows="auto 1fr"
           rowGap={8}
           columnGap={8}
@@ -31,10 +34,15 @@ const BlogsSection = () => {
             <Card
               key={i}
               as="article"
-              _first={{ gridRow: 'span 2/span 2', gridColumn: 'span 4/span 4' }}
-              gridColumn="span 3/span 3"
+              gridColumn={{
+                lg: 'span 3/span 3',
+              }}
               sx={{
-                '&:first-child .card-title': { fontSize: '4xl' },
+                '&:first-of-type': {
+                  gridRow: { lg: 'span 2/span 2' },
+                  gridColumn: { lg: 'span 4/span 4' },
+                },
+                '&:first-child .card-title': { fontSize: { lg: '4xl' } },
               }}
             >
               <AspectRatio ratio={16 / 9} position="relative" w="full">
@@ -55,16 +63,11 @@ const BlogsSection = () => {
                 >
                   Sep 26, 2021
                 </Text>
-                <Heading
-                  fontSize="xl"
-                  as="h3"
-                  className="card-title"
-                  fontWeight="800"
-                >
+                <Heading fontSize={{ lg: 'xl' }} as="h3">
                   {item.title}
                 </Heading>
 
-                {i === 0 && item.excerpt && <Text>{item.excerpt}</Text>}
+                {item.excerpt && <Text>{item.excerpt}</Text>}
               </VStack>
               <Box as="footer" mt="auto" p={6}>
                 <Link fontSize="sm" fontWeight="bold" href="/">

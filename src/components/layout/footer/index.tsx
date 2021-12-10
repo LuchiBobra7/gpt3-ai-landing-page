@@ -12,23 +12,41 @@ import Logo from 'components/logo'
 import Link from 'components/link'
 import { menuItems } from './nav-data'
 import CustomHeading from 'components/heading'
+import useBreakpoint from 'hooks/useBreakpoint'
 
 const Footer = () => {
+  const { isLargeScreen } = useBreakpoint()
   return (
-    <Box as="footer" bg="#031B34">
-      <Box className="footer-top" py={32}>
-        <Container maxW="container.md" textAlign="center">
-          <CustomHeading as="h1" variant="title" pb={4} mb={12}>
+    <Box as="footer" bg="blue.500">
+      <Box className="footer-top" py={{ base: 12, lg: 20 }}>
+        <Container maxW="container.lg" textAlign="center">
+          <CustomHeading
+            as="h1"
+            variant="title"
+            fontSize={{ base: '3xl', lg: '6xl' }}
+            pb={4}
+            mb={{ base: 4, lg: 12 }}
+          >
             Do you want to step in to the future before others
           </CustomHeading>
-          <Button size="lg" variant="outline" borderRadius={0}>
+          <Button
+            size={isLargeScreen ? 'lg' : 'md'}
+            variant="outline"
+            borderRadius={0}
+          >
             Request Early Access
           </Button>
         </Container>
       </Box>
-      <Box className="footer-bottom" py={2} fontSize="sm">
+      <Box
+        className="footer-bottom"
+        py={10}
+        fontSize="sm"
+        borderTopWidth={1}
+        borderTopColor="blackAlpha.400"
+      >
         <Container>
-          <SimpleGrid columns={{ base: 2, lg: 4 }}>
+          <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }}>
             <Box maxW="60%">
               <Logo />
               <Text fontSize="xs" my={2}>

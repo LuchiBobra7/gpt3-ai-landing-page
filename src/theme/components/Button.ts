@@ -6,10 +6,6 @@ const Button = {
     px: 12,
   },
   sizes: {
-    md: {
-      fontWeight: 400,
-      height: 12,
-    },
     lg: {
       fontWeight: 500,
       height: 16,
