@@ -42,6 +42,7 @@ const BrandSection = () => {
             <Box display="flex">
               <Input
                 variant="filled"
+                type="email"
                 size={isLargeScreen ? 'xl' : 'md'}
                 flex={2}
                 borderRightRadius={0}
