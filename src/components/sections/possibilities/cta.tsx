@@ -1,5 +1,5 @@
 import {
-  HStack,
+  Stack,
   Container,
   Heading,
   Text,
@@ -12,13 +12,15 @@ import SectionWrapper from '../section-wrapper'
 
 const CTA = () => {
   return (
-    <SectionWrapper pb={0}>
+    <SectionWrapper pb={{ xl: 0 }}>
       <Container>
-        <HStack
+        <Stack
           w="full"
           justifyContent="space-between"
-          alignItems="flex-end"
-          spacing={24}
+          alignItems={{ md: 'flex-end' }}
+          flexWrap="wrap"
+          direction={{ base: 'column', lg: 'row' }}
+          spacing={{ base: 6, lg: 24 }}
           py={14}
           px={10}
           borderRadius="2xl"
@@ -28,14 +30,14 @@ const CTA = () => {
             <Text fontSize="sm" color="black">
               Request Early Access to Get Started
             </Text>
-            <Heading fontSize="2xl" fontWeight="800" color="black">
+            <Heading fontSize="2xl" color="black">
               Register today & start exploring the endless possibilities
             </Heading>
           </VStack>
           <Button variant="dark" borderRadius="full" size="lg">
             Get Started
           </Button>
-        </HStack>
+        </Stack>
       </Container>
     </SectionWrapper>
   )

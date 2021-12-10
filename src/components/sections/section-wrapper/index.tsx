@@ -5,7 +5,7 @@ type Props = ComponentProps<typeof Box>
 
 const SectionWrapper: FC<Props> = ({ children, ...props }) => {
   return (
-    <Box as="section" py={16} {...props}>
+    <Box as="section" py={{ base: 6, lg: 16 }} {...props}>
       {children}
     </Box>
   )

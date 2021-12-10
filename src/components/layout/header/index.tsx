@@ -10,8 +10,10 @@ import {
 } from '@chakra-ui/react'
 import Logo from 'components/logo'
 import NavMenu from 'components/nav-menu'
+import MobileNav from 'components/nav-menu/mobile-nav'
 import useBreakpoint from 'hooks/useBreakpoint'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
+import { HEADER_HEIGHT } from 'constants/layout'
 
 const Header = () => {
   const [smallHeader, setSmallHeader] = useState(false)
@@ -24,18 +26,25 @@ const Header = () => {
   }, [])
   const { isLargeScreen } = useBreakpoint()
   const { isOpen, onToggle } = useDisclosure()
+  const headerLgScreenHeight = smallHeader ? HEADER_HEIGHT.MD : HEADER_HEIGHT.LG
+  const headerLgScreenBg = !isLargeScreen ? 'rgba(1, 37, 76, 0.6)' : 'none'
+  const headerLgFilter =
+    smallHeader && isLargeScreen ? 'saturate(180%) blur(20px)' : 'none'
   return (
     <Box
       as="header"
-      py={smallHeader ? 6 : 9}
+      py={4}
+      display="flex"
+      alignItems="center"
       transition="all .15s ease-in"
       position="fixed"
-      top="0"
+      top={0}
       w="full"
-      zIndex="10"
-      bg={smallHeader ? 'rgba(1, 37, 76, 0.6)' : 'none'}
+      height={{ base: HEADER_HEIGHT.SM, lg: headerLgScreenHeight }}
+      zIndex={10}
+      bg={{ base: 'rgba(1, 37, 76, 0.96)', lg: headerLgScreenBg }}
       shadow={smallHeader ? 'xl' : 'none'}
-      backdropFilter={smallHeader ? 'saturate(180%) blur(20px)' : 'none'}
+      backdropFilter={headerLgFilter}
     >
       <Container
         display="flex"
@@ -44,22 +53,8 @@ const Header = () => {
         flexWrap="wrap"
       >
         <HStack spacing={16}>
-          <Logo />
-          {isLargeScreen && (
-            <HStack alignItems="center" spacing={{ base: 4, md: 12 }}>
-              <NavMenu />
-            </HStack>
-          )}
-        </HStack>
-        <HStack spacing={7}>
-          <Button variant="unstyled" size={smallHeader ? 'lg' : 'lg'}>
-            Sign In
-          </Button>
-          <Button variant="primary" size="lg">
-            Sign Up
-          </Button>
-          {!isLargeScreen && (
-            <>
+          <HStack spacing={4}>
+            {!isLargeScreen && (
               <IconButton
                 onClick={onToggle}
                 icon={
@@ -69,16 +64,30 @@ const Header = () => {
                     <HamburgerIcon w={5} h={5} />
                   )
                 }
-                variant={'ghost'}
+                variant={'unstyled'}
                 aria-label={'Toggle Navigation'}
               />
-              <Collapse in={isOpen} animateOpacity>
-                mobileNav
-              </Collapse>
-            </>
+            )}
+            <Logo />
+          </HStack>
+          {isLargeScreen && (
+            <HStack alignItems="center" spacing={{ base: 4, md: 12 }}>
+              <NavMenu />
+            </HStack>
           )}
         </HStack>
+        <HStack spacing={7}>
+          <Button variant="unstyled" size={isLargeScreen ? 'lg' : 'sm'}>
+            Sign In
+          </Button>
+          <Button variant="primary" size={isLargeScreen ? 'lg' : 'sm'}>
+            Sign Up
+          </Button>
+        </HStack>
       </Container>
+      <Collapse in={isOpen} animateOpacity>
+        <MobileNav />
+      </Collapse>
     </Box>
   )
 }
