@@ -24,7 +24,7 @@ const BrandSection = () => {
       display="flex"
       alignItems="center"
       pt={{ base: HEADER_HEIGHT.SM + 12, lg: HEADER_HEIGHT.LG }}
-      pb={{ base: 4, lg: 10 }}
+      pb={{ base: 4, lg: 0 }}
       bgImage="radial-gradient(circle at 25% 10%, rgb(0, 40, 83) 0px, #040c18 50%)"
     >
       <Container>
@@ -39,21 +39,20 @@ const BrandSection = () => {
               alteration boisterous the attachment. Party we years to order
               allow asked of.
             </Text>
-            <Box display="flex">
+            <Box display="flex" w={{ base: '80%', md: '90%' }}>
               <Input
                 variant="filled"
                 type="email"
                 size={isLargeScreen ? 'xl' : 'md'}
-                flex={2}
+                flex={4}
                 borderRightRadius={0}
-                minW={{ lg: '85%' }}
                 placeholder="Enter your email"
               />
               <Button
                 variant="primary"
                 borderLeftRadius={0}
                 size={isLargeScreen ? 'xl' : 'md'}
-                flex={1}
+                flex={1.5}
               >
                 Get Started
               </Button>
@@ -61,7 +60,22 @@ const BrandSection = () => {
             <Users />
           </VStack>
           {isLargeScreen && (
-            <Box flex="1">
+            <Box
+              flex="1"
+              position="relative"
+              _before={{
+                content: '""',
+                display: 'block',
+                position: 'absolute',
+                left: '50%',
+                top: '50%',
+                transform: 'translate(-50%, -50%)',
+                bgColor: '#0F6BCD',
+                w: '285px',
+                h: '285px',
+                filter: 'blur(214px)',
+              }}
+            >
               <ParallaxImage />
             </Box>
           )}
