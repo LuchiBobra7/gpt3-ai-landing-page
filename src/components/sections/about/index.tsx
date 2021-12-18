@@ -20,7 +20,7 @@ const AboutSection = () => {
           w="full"
           spacing={{ base: 10, lg: 20 }}
           bg="blue.500"
-          bgImage="radial-gradient(circle at 30% -100%, blue.500 25%, blue.500  85%,#1b78de 100%)"
+          bgImage="radial-gradient(circle at 30% -100%,#042c54 25%,#042c54 85%,#1b78de 100%);"
           py={{ base: 8, lg: 14 }}
           px={{ base: 4, lg: 10 }}
         >

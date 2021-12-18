@@ -12,7 +12,7 @@ import SectionWrapper from '../section-wrapper'
 
 const CTA = () => {
   return (
-    <SectionWrapper pb={{ xl: 0 }}>
+    <SectionWrapper py={{ base: 10, xl: 0 }} position="relative" zIndex={1}>
       <Container>
         <Stack
           w="full"

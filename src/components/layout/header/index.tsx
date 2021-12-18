@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import {
   Container,
   HStack,
@@ -17,13 +17,15 @@ import { HEADER_HEIGHT } from 'constants/layout'
 
 const Header = () => {
   const [smallHeader, setSmallHeader] = useState(false)
-  useEffect(() => {
+
+  useLayoutEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', () =>
         setSmallHeader(window.pageYOffset > 30)
       )
     }
   }, [])
+
   const { isLargeScreen } = useBreakpoint()
   const { isOpen, onToggle } = useDisclosure()
   const headerLgScreenHeight = smallHeader ? HEADER_HEIGHT.MD : HEADER_HEIGHT.LG
@@ -36,7 +38,7 @@ const Header = () => {
       py={4}
       display="flex"
       alignItems="center"
-      transition="all .15s ease-in"
+      transition="all 0.1s ease-in"
       position="fixed"
       top={0}
       w="full"
