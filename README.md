@@ -10,7 +10,7 @@
 
 ## Preview 👀
 
-![Home Page Preview](/design/Home.png)
+![Home Page Preview](/design/home.png)
 Designed by [AR Shakir](https://www.arshakir.com)
 
 ## Getting Started 🦄
