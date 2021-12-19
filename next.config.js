@@ -7,6 +7,6 @@ module.exports = {
     SERVER_API_ENDPOINT: process.env.SERVER_API_ENDPOINT,
   },
   images: {
-    domains: ['media.graphcms.com', 'cdn.pixabay.com'],
+    domains: ['media.graphcms.com'],
   },
 }

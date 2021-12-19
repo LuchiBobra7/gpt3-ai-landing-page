@@ -31,6 +31,7 @@ const MobileNav = () => {
             offset={-64}
             cursor="pointer"
             _hover={{ color: 'white' }}
+            className="nav-link"
           >
             {title}
           </ScrollLink>

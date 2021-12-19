@@ -10,7 +10,7 @@ const FeaturesSection = () => {
       <Container w="full" justifyContent="space-between" spacing={20}>
         <HStack
           w="full"
-          spacing={{ lg: 12 }}
+          spacing={{ lg: 24 }}
           justifyContent="space-between"
           alignItems="flex-start"
           flexWrap="wrap"
@@ -30,7 +30,7 @@ const FeaturesSection = () => {
           </VStack>
           <Box as="dl" flex={1.5}>
             {featureItems.map((item, i) => (
-              <HStack key={i} mb={7} spacing={{ lg: 32 }} flexWrap="wrap">
+              <HStack key={i} mb={7} spacing={{ lg: 20 }} flexWrap="wrap">
                 <CustomHeading
                   variant="subtitle"
                   as="dt"

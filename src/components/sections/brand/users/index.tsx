@@ -3,7 +3,7 @@ import { userItems } from './users-data'
 
 const Clients = () => {
   const TooltipAvatar: typeof Avatar = (props: any) => (
-    <Tooltip label={props.name} hasArrow>
+    <Tooltip label={props.name} variant="lightBlue">
       <Avatar {...props} />
     </Tooltip>
   )

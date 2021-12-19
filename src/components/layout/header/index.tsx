@@ -29,7 +29,7 @@ const Header = () => {
   const { isLargeScreen } = useBreakpoint()
   const { isOpen, onToggle } = useDisclosure()
   const headerLgScreenHeight = smallHeader ? HEADER_HEIGHT.MD : HEADER_HEIGHT.LG
-  const headerLgScreenBg = !isLargeScreen ? 'rgba(1, 37, 76, 0.6)' : 'none'
+  const headerLgScreenBg = !isLargeScreen ? 'rgba(26, 32, 44, 0.8)' : 'none'
   const headerLgFilter =
     smallHeader && isLargeScreen ? 'saturate(180%) blur(20px)' : 'none'
   return (
@@ -38,7 +38,7 @@ const Header = () => {
       py={4}
       display="flex"
       alignItems="center"
-      transition="all 0.1s ease-in"
+      transition="all 0.2s ease-in-out"
       position="fixed"
       top={0}
       w="full"
