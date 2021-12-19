@@ -18,7 +18,7 @@ const Footer = () => {
   const { isLargeScreen } = useBreakpoint()
   return (
     <Box as="footer" bg="blue.500">
-      <Box className="footer-top" py={{ base: 12, lg: 20 }}>
+      <Box py={{ base: 12, lg: 20 }}>
         <Container maxW="container.lg" textAlign="center">
           <CustomHeading
             as="h1"
@@ -39,7 +39,6 @@ const Footer = () => {
         </Container>
       </Box>
       <Box
-        className="footer-bottom"
         py={10}
         fontSize="sm"
         borderTopWidth={1}

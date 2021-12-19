@@ -28,7 +28,7 @@ const MobileNav = () => {
             whiteSpace="nowrap"
             spy
             smooth
-            offset={-64}
+            offset={-HEADER_HEIGHT.LG}
             cursor="pointer"
             _hover={{ color: 'white' }}
             className="nav-link"
