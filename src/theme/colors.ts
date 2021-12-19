@@ -75,13 +75,6 @@ const colors = {
     800: '#448999',
     900: '#37707d',
   },
-  gradient: {
-    radialBlue:
-      'radial-gradient(circle at 30% -100%, blue.500 25%, blue.500  85%,#1b78de 100%)',
-    radialDarkBlue:
-      'radial-gradient(circle at 25% 10%, rgb(0, 40, 83) 0px, #040c18 50%)',
-    pomegranate: 'linear-gradient(to right, #AE67FA, #F49867)',
-  },
 }
 
 export default colors

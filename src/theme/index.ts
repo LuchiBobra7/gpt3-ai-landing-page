@@ -8,7 +8,7 @@ import Container from './components/Container'
 import Avatar from './components/Avatar'
 import { Heading, CustomHeading } from './components/Heading'
 import Text from './components/Text'
-import Card from './components/Card'
+import Tooltip from './components/Tooltip'
 
 const theme = extendTheme({
   config,
@@ -31,7 +31,7 @@ const theme = extendTheme({
     Button,
     Input,
     Avatar,
-    Card,
+    Tooltip,
   },
 })
 

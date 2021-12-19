@@ -1,14 +1,29 @@
-import React, { useState, useEffect } from 'react'
-import Loader from 'react-loader-spinner'
-import { VStack } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
+import Preloader from 'components/preloader'
 import Layout from 'components/layout'
 import BrandSection from 'components/sections/brand'
 import AboutSection from 'components/sections/about'
 import FeaturesSection from 'components/sections/features'
 import PossibilitiesSection from 'components/sections/possibilities'
 import BlogSection from 'components/sections/blog'
+import { getPosts } from 'data/index'
+import { GetPostsQuery } from 'data/queries/__generated__/getPosts'
 
-const HomePage = () => {
+type Props = {
+  posts: GetPostsQuery['posts']
+}
+
+const HomePage = ({ posts }: Props) => {
+  const { isFallback } = useRouter()
+
+  if (isFallback) {
+    return 'Loading'
+  }
+
+  if (!posts) {
+    return 'Error'
+  }
   const [spinnerLoading, setSpinnerLoading] = useState(true)
 
   useEffect(() => {
@@ -20,34 +35,28 @@ const HomePage = () => {
   }, [spinnerLoading])
 
   return (
-    <React.Fragment>
+    <>
       {spinnerLoading ? (
-        <VStack
-          h="100vh"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          bgImage="radial-gradient(circle at 25% 10%, rgb(0, 40, 83) 0px, #040c18 50%)"
-        >
-          <Loader
-            type="Circles"
-            color="#00BFFF"
-            height={100}
-            width={100}
-            visible={spinnerLoading} //3 secs
-          />
-        </VStack>
+        <Preloader visible={spinnerLoading} />
       ) : (
         <Layout>
           <BrandSection />
           <AboutSection />
           <FeaturesSection />
           <PossibilitiesSection />
-          <BlogSection />
+          <BlogSection posts={posts} />
         </Layout>
       )}
-    </React.Fragment>
+    </>
   )
+}
+
+HomePage.getInitialProps = async () => {
+  const posts = (await getPosts()) ?? []
+  return {
+    posts,
+    fallback: true,
+  }
 }
 
 export default HomePage

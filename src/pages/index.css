@@ -2,4 +2,19 @@
 
 .nav-link-active {
   color: white !important;
+  position: relative;
+}
+
+.nav-link-active::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  display: block;
+  width: 140%;
+  margin-left: -20%;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #71e5ff;
+  filter: blur(1px);
+  z-index: -1;
 }
