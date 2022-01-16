@@ -31,7 +31,7 @@ const Header = () => {
   const headerLgScreenHeight = smallHeader ? HEADER_HEIGHT.MD : HEADER_HEIGHT.LG
   const headerLgScreenBg = !isLargeScreen ? 'rgba(26, 32, 44, 0.8)' : 'none'
   const headerLgFilter =
-    smallHeader && isLargeScreen ? 'saturate(180%) blur(20px)' : 'none'
+    smallHeader && isLargeScreen ? 'saturate(180%) blur(10px)' : 'none'
   return (
     <Box
       as="header"

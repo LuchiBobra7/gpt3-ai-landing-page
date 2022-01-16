@@ -22,7 +22,14 @@ const BlogsSection = ({ posts }: Props) => {
   return (
     <SectionWrapper id="blog">
       <Container>
-        <CustomHeading pb={4} mb={12} maxW={{ base: '80%', xl: '60%' }}>
+        <CustomHeading
+          pb={4}
+          mb={12}
+          alignItems={{ base: 'center', lg: 'flex-start' }}
+          mx={{ base: 'auto', lg: 0 }}
+          textAlign={{ base: 'center', lg: 'left' }}
+          maxW={{ base: '75%', lg: '100%' }}
+        >
           A lot is happening, We are blogging about it.
         </CustomHeading>
         <SimpleGrid
@@ -38,6 +45,8 @@ const BlogsSection = ({ posts }: Props) => {
             <LinkBox
               key={i}
               as="article"
+              display="flex"
+              flexDirection="column"
               bg="blue.500"
               className="blog-item"
               gridColumn={{
@@ -86,7 +95,7 @@ const BlogsSection = ({ posts }: Props) => {
                 </Heading>
               </VStack>
               <Box as="footer" mt="auto" p={6}>
-                <LinkOverlay fontSize="sm" fontWeight="bold" href="/">
+                <LinkOverlay fontSize="sm" href="/">
                   Read full article
                 </LinkOverlay>
               </Box>

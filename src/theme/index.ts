@@ -1,5 +1,6 @@
 import { extendTheme, theme as baseTheme } from '@chakra-ui/react'
 import config from './config'
+import breakpoints from './breakpoints'
 import colors from './colors'
 import fonts from './fonts'
 import Button from './components/Button'
@@ -12,6 +13,7 @@ import Tooltip from './components/Tooltip'
 
 const theme = extendTheme({
   config,
+  breakpoints,
   fonts,
   colors,
   styles: {
@@ -20,6 +22,9 @@ const theme = extendTheme({
         backgroundColor: 'dark.500',
         color: 'white',
         overflowX: 'hidden',
+      },
+      ':root .nav-link-active': {
+        color: 'white',
       },
     }),
   },
