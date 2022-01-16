@@ -18,11 +18,11 @@ const AboutSection = () => {
       <Container>
         <VStack
           w="full"
-          spacing={{ base: 10, lg: 20 }}
+          spacing={{ base: 7, md: 16, lg: 24 }}
           bg="blue.500"
-          bgImage="radial-gradient(circle at 30% -100%,#042c54 25%,#042c54 85%,#1b78de 100%);"
-          py={{ base: 8, lg: 14 }}
-          px={{ base: 4, lg: 10 }}
+          bgImage="radial-gradient(circle at 30% -100%, #042c54 25%,#042c54 90%,#1b78de 110%);"
+          py={{ base: 10, lg: 16 }}
+          px={10}
         >
           <Flex
             spacing={4}
@@ -49,16 +49,18 @@ const AboutSection = () => {
           </Flex>
           <HStack
             w="full"
-            spacing={{ md: 7 }}
-            justifyContent={{ md: 'space-between' }}
+            spacing={7}
+            justifyContent={{ base: 'center', lg: 'space-between' }}
+            textAlign={{ base: 'center', lg: 'left' }}
             flexWrap="wrap"
-            alignItems="flex-start"
+            alignItems={{ base: 'center', lg: 'flex-start' }}
           >
             <CustomHeading
               fontSize={{ base: '2xl', lg: '4xl' }}
               flex={{ lg: 1 }}
               maxW={{ lg: '40%' }}
-              mb={{ base: 4, lg: 0 }}
+              mb={{ base: 4, md: 0 }}
+              lineHeight={1.54}
             >
               The possibilities are beyond your imagination
             </CustomHeading>

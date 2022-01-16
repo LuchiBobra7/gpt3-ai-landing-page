@@ -29,7 +29,14 @@ const BrandSection = () => {
     >
       <Container>
         <HStack flexWrap={{ base: 'wrap', lg: 'nowrap' }} spacing={0}>
-          <VStack flex="1" alignItems="flex-start" minWidth="55%" spacing={10}>
+          <VStack
+            alignItems={{ base: 'center', lg: 'flex-start' }}
+            minW="60%"
+            mx={{ base: 'auto', lg: 0 }}
+            maxW={{ base: '28rem', lg: '100%' }}
+            spacing={{ base: 7, lg: 10 }}
+            textAlign={{ base: 'center', lg: 'left' }}
+          >
             <CustomHeading fontSize={{ base: '3xl', lg: '6xl' }}>
               Let’s Build Something amazing with GPT-3 OpenAI
             </CustomHeading>
@@ -39,7 +46,7 @@ const BrandSection = () => {
               alteration boisterous the attachment. Party we years to order
               allow asked of.
             </Text>
-            <Box display="flex" w={{ base: '80%', md: '90%' }}>
+            <Box display="flex" w={{ base: '100%', lg: '90%' }}>
               <Input
                 variant="filled"
                 type="email"
@@ -52,7 +59,7 @@ const BrandSection = () => {
                 variant="primary"
                 borderLeftRadius={0}
                 size={isLargeScreen ? 'xl' : 'md'}
-                flex={1.5}
+                flex={2}
               >
                 Get Started
               </Button>
@@ -61,7 +68,6 @@ const BrandSection = () => {
           </VStack>
           {isLargeScreen && (
             <Box
-              flex="1"
               position="relative"
               _before={{
                 content: '""',

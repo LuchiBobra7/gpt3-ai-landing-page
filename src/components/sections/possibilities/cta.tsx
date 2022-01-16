@@ -12,21 +12,22 @@ import SectionWrapper from '../section-wrapper'
 
 const CTA = () => {
   return (
-    <SectionWrapper py={{ base: 10, xl: 0 }} position="relative" zIndex={1}>
+    <SectionWrapper pb={{ base: 10, lg: 0 }} position="relative" zIndex={1}>
       <Container>
         <Stack
           w="full"
-          justifyContent="space-between"
-          alignItems={{ md: 'flex-end' }}
+          alignItems={{ base: 'center', lg: 'flex-start' }}
+          justifyContent={{ base: 'center', lg: 'space-between' }}
           flexWrap="wrap"
           direction={{ base: 'column', lg: 'row' }}
-          spacing={{ base: 6, lg: 24 }}
+          spacing={{ base: 6, lg: 0 }}
+          textAlign={{ base: 'center', lg: 'left' }}
           py={14}
           px={10}
           borderRadius="2xl"
           bgGradient="linear(to-r, #AE67FA, #F49867)"
         >
-          <VStack alignItems="flex-start">
+          <VStack alignItems={{ lg: 'flex-start' }}>
             <Text fontSize="sm" color="black">
               Request Early Access to Get Started
             </Text>

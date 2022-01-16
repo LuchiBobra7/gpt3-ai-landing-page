@@ -1,4 +1,11 @@
-import { HStack, Container, Text, VStack, Box } from '@chakra-ui/react'
+import {
+  HStack,
+  Container,
+  Text,
+  VStack,
+  Box,
+  SimpleGrid,
+} from '@chakra-ui/react'
 import SectionWrapper from '../section-wrapper'
 import CustomHeading from 'components/heading'
 import { featureItems } from './features-data'
@@ -11,16 +18,19 @@ const FeaturesSection = () => {
         <HStack
           w="full"
           spacing={{ lg: 24 }}
-          justifyContent="space-between"
+          justifyContent={{ base: 'center', lg: 'space-between' }}
           alignItems="flex-start"
           flexWrap="wrap"
         >
           <VStack
             w="full"
             flex={{ lg: 1 }}
-            spacing={{ base: 6, lg: 12 }}
-            alignItems="flex-start"
-            mb={4}
+            spacing={{ base: 6, lg: 9 }}
+            alignItems={{ base: 'center', lg: 'flex-start' }}
+            mx={{ base: 'auto', lg: 0 }}
+            textAlign={{ base: 'center', lg: 'left' }}
+            maxW={{ base: '75%', lg: '100%' }}
+            mb={{ base: 12, lg: 4 }}
           >
             <CustomHeading fontSize={{ base: '2xl', lg: '4xl' }} flex={1}>
               The Future is Now and You Just Need To Realize It. Step into
@@ -28,9 +38,19 @@ const FeaturesSection = () => {
             </CustomHeading>
             <CTALink title="Request Early Access to Get Started" href="/" />
           </VStack>
-          <Box as="dl" flex={1.5}>
+          <SimpleGrid
+            as="dl"
+            flex={{ lg: 1.5 }}
+            columns={{ base: 2, lg: 1 }}
+            spacingX={{ base: 12, lg: 0 }}
+          >
             {featureItems.map((item, i) => (
-              <HStack key={i} mb={7} spacing={{ lg: 20 }} flexWrap="wrap">
+              <HStack
+                key={i}
+                mb={14}
+                spacing={{ base: 0, lg: 24 }}
+                flexWrap="wrap"
+              >
                 <CustomHeading
                   variant="subtitle"
                   as="dt"
@@ -45,7 +65,7 @@ const FeaturesSection = () => {
                 </Text>
               </HStack>
             ))}
-          </Box>
+          </SimpleGrid>
         </HStack>
       </Container>
     </SectionWrapper>
