@@ -2,8 +2,8 @@ import { useBreakpointValue } from '@chakra-ui/react'
 
 const useBreakpoint = () => {
   const isLargeScreen = useBreakpointValue({ base: false, lg: true })
-
-  return { isLargeScreen }
+  const isXLargeScreen = useBreakpointValue({ base: false, xl: true })
+  return { isLargeScreen, isXLargeScreen }
 }
 
 export default useBreakpoint
