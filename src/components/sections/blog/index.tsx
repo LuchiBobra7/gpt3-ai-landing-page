@@ -54,8 +54,8 @@ const BlogsSection = ({ posts }: Props) => {
               }}
               sx={{
                 '&:first-of-type': {
-                  gridRow: { lg: 'span 2/span 2' },
-                  gridColumn: { lg: 'span 3/span 3' },
+                  gridRow: { md: 'span 2/span 2' },
+                  gridColumn: { md: 'span 2/span 2', lg: 'span 3/span 3' },
                 },
                 '&:first-of-type .card-title': { fontSize: { md: '4xl' } },
               }}

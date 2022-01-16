@@ -26,7 +26,7 @@ const Header = () => {
     }
   }, [])
 
-  const { isLargeScreen } = useBreakpoint()
+  const { isLargeScreen, isXLargeScreen } = useBreakpoint()
   const { isOpen, onToggle } = useDisclosure()
   const headerLgScreenHeight = smallHeader ? HEADER_HEIGHT.MD : HEADER_HEIGHT.LG
   const headerLgScreenBg = !isLargeScreen ? 'rgba(26, 32, 44, 0.8)' : 'none'
@@ -56,7 +56,7 @@ const Header = () => {
       >
         <HStack spacing={16}>
           <HStack spacing={4}>
-            {!isLargeScreen && (
+            {!isXLargeScreen && (
               <IconButton
                 onClick={onToggle}
                 icon={
@@ -72,7 +72,7 @@ const Header = () => {
             )}
             <Logo />
           </HStack>
-          {isLargeScreen && (
+          {isXLargeScreen && (
             <HStack alignItems="center" spacing={{ base: 4, md: 12 }}>
               <NavMenu />
             </HStack>
